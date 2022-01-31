@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
 
-body{
+body {
    background-color:red;
 }
 
@@ -14,4 +14,4 @@ footer {
    border-radius: 10% 10% 0 0;
    margin-top: 40px;
    font-weight: 100;
- }
+}
