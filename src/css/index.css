@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
 body{
    margin:0;
 }
@@ -27,3 +29,9 @@ header{
    width:fit-content;
   
 }
+
+footer h4 {
+   color: black;
+   font-size: 12px;
+   margin-top: 20px;
+ }
