@@ -9,7 +9,7 @@ constructor(){
 
 
   popupDetails = async(id) => {
-      this.popSection.style.display = 'visible';
+      this.popSection.style.display = 'flex';
     const showUrl = `https://api.tvmaze.com/shows/${id}`;
     const request = await fetch(showUrl)
     const data = await request.json();
