@@ -1,4 +1,4 @@
-import { divide } from "lodash";
+import Popup from "../popup.js";
 
 const BaseUrl = 'https://api.tvmaze.com/shows';
 
@@ -20,6 +20,16 @@ const ShowDetails = async () => {
    card.innerHTML = ShowList;
    containersShows.appendChild(card);
   }
+  const pop = new Popup();
+  const commentBtns = document.querySelectorAll('.commentBtn');
+  commentBtns.forEach((buttonItem,index) => {
+    buttonItem.addEventListener('click' , () => {
+      const ida = index+1;
+      console.log(ida)
+ pop.popupDetails(ida);
+    })
+  }
+  )
 };
 
 export default ShowDetails;

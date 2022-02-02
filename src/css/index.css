@@ -1,37 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 
 body {
   margin: 0;
 }
 ul {
-  list-style-type:none;
-  display:flex;
-  margin:0;
-  justify-content:space-around;
-  padding-left:0;
-  padding-top:17px 
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  justify-content: space-around;
+  padding-left: 0;
+  padding-top: 17px;
 }
-
 ul li {
-  align-items:center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
 }
 header {
-  background:grey;
-  height:60px;
-  padding:0px;
-  margin:0;
+  background: #28ac73;
+  height: 60px;
+
+  padding: 0px;
+  margin: 0;
 }
 .logo {
-  border: 2px solid black;
-  border-radius:50%;
-  padding:8px;
-  width:fit-content;
+  border: 2px #a0e78f;
+  border-radius: 50%;
+  padding: 8px;
+  width: fit-content;
+  background: #a0e78f;
 }
 
-footer h4 {
-  color: black;
-  font-size: 12px;
-  margin-top: 20px;
+footer {
+  background: grey;
+  margin-top: 42px;
+  padding: 18px;
+}
+
+footer > h4 {
+  text-align: center;
+  margin: 0;
+}
+
+.popup-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(193, 199, 208, 0.85);
+  width: 100%;
+  overflow: auto;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  display: none;
+}
+.closeBtn:hover {
+  color: blue;
+  cursor: pointer;
+}
+.popup-window {
+ z-index:2;
+  border-radius: 1vw;
+  background-color: #fff;
+  width: 30%;
+  padding: 18px;
+  position: relative;
+  top: 20px;
+  left: 35%;
+  margin-bottom:70px;
+ height:fit-content;
+}
+
+.show-title {
+}
+
+.show-img {
+  width: 100%;
+}
+
+.show-summary {
+}
+
+.language-rating {
+  display: flex;
+
+  justify-content: space-between;
+}
+.title-close {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
 }
 
 .container-movies {
@@ -68,7 +128,7 @@ footer h4 {
   margin: 30px 0 0;
   border: none;
   color: #000407;
-  font-family: 'Lora', 'Sora', sans-serif;
+  font-family: "Lora", "Sora", sans-serif;
   font-size: 15px;
   border-radius: 20% 20% 0 0;
   transition: background ease-out 0.5s 0.1s;
