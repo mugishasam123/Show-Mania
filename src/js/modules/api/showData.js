@@ -6,7 +6,7 @@ const ShowDetails = async () => {
   const containersShows = document.querySelector('.container-movies');
   const shows = await fetch(BaseUrl);
   const result = await shows.json();
-  console.log(result)
+ 
   for (let i = 0; i < 9 && i < result.length; i++) {
     const ShowList = `
     <img src="${result[i].image.original}" alt="">
@@ -25,7 +25,7 @@ const ShowDetails = async () => {
   commentBtns.forEach((buttonItem,index) => {
     buttonItem.addEventListener('click' , () => {
       const ida = index+1;
-      console.log(ida)
+     
  pop.popupDetails(ida);
     })
   }
