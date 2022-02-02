@@ -13,7 +13,7 @@ const ShowDetails = async () => {
     <img src="${result[i].image.original}" alt="">
    <div class="name-likes">
       <h3>${result[i].name}</h3>
-      <i class="fa fa-thumbs-up">likes</i>
+      <i class='counter fa fa-thumbs-up'> 0likes</i>
    </div>
    <button class="commentBtn">Comments</button>`;
    const card = document.createElement('div');
@@ -31,26 +31,23 @@ const ShowDetails = async () => {
     })
   }
   )
-
-  const likes = document.createElement('li');
-  likes.classList.add('LikeCounter');
-  likes.innerHTML= '0 likes';
-  containersShows.appendChild(likes);
-
   const likesData = await getLikes();
-  const showLikes = (likesData, likes) => {
+  const counter = document.querySelector('.counter');
+  const fa = document.querySelector('fa-thumbs-up');
+
+  const showLikes = (likesData, counter) => {
     likesData.forEach((movie) => {
-      if ( movie, item_id === movie.id) {
-        likes.innerHTML = `${movie.likes} likes `;
+      if( movie.item_id === counter.id) {
+        counter.innerHTML = `${movie.likes} likes`;
       }
     });
   };
-  showLikes(likesData, likes);
+  showLikes(likesData, counter);
 
-  fa-thumbs-up.addEventListener('click', async() => {
-    await addLike(movie.id);
+  fa.addEventListener('click', async() => {
+    await addLike(counter.id);
     const update = await getLikes();
-    showLikes(update, likes);
+    showLikes(update,fa);
   });
 };
 

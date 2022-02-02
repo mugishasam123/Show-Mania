@@ -1,5 +1,3 @@
-import { method } from "lodash";
-
 const getLikes = async () => {
   const response = await fetch(
     'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YNDJPVJpFp0pmLtqOwhR/likes/'
@@ -8,7 +6,7 @@ const getLikes = async () => {
 };
 
 const addLike = async (movieId) => {
-  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YNDJPVJpFp0pmLtqOwhR/likes/${movieId}', {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/2gQo9KoXKBGuzkF3ySa1/likes/${movieId}', {
     method: 'POST',
     body: JSON.stringify({
       item_id: movieId,

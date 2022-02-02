@@ -129,3 +129,13 @@ footer > h4 {
   cursor: pointer;
   padding: 5px;
 }
+
+.counter {
+  display: flex;
+  cursor: pointer;
+}
+
+.counter:hover {
+  color: aliceblue;
+  padding: 1px;
+}
