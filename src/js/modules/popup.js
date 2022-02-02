@@ -79,7 +79,7 @@ export default class Popup {
       const newCommentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5Ap1XN8WUsuZk6doKhi8/comments?item_id=${id}`;
       const newCommentRequest = await fetch(newCommentUrl);
       const newComments = await newCommentRequest.json();
-      console.log(newComments)
+     
     const itemIndex = newComments.length-1;
   
     
