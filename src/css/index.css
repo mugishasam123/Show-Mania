@@ -131,7 +131,63 @@ footer > h4 {
   font-family: "Lora", "Sora", sans-serif;
   font-size: 15px;
   border-radius: 20% 20% 0 0;
-  transition: background ease-out 0.5s 0.1s;
   cursor: pointer;
   padding: 5px;
+}
+
+.comments-counter{
+  color:#242B97;
+  text-align:center;
+  font-size:23px;
+ 
+}
+.form-title{
+  color:#242B97;
+  text-align:center;
+}
+.comments-list{
+  list-style-type:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-items:center;
+  gap:10px;
+  padding:10px;
+}
+.comment-item{
+  background:#CED1D0;
+  padding:15px;
+  border-left:5px solid #038F92;
+  width:80%;
+}
+.comment-item>p{
+  color:#2B1BB0 ;
+  margin:0;
+}
+form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;
+}
+.submit-comment{
+  background:#038F92;
+  color:white;
+   width:30%;
+  font-size:16px;
+  border:none;
+  border-radius:5px;
+  padding:5px;
+
+}
+.submit-comment:hover{
+background:#0D6A6C;
+}
+form>input,textarea{
+  border:3px solid #435353 ;
+  border-radius:4px;
+  padding:6px;
+}
+form>input:focus,textarea:focus{
+  border:3px solid #06C4C7 ;
 }
