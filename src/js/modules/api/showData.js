@@ -1,4 +1,5 @@
 import Popup from "../popup.js";
+import { getLikes, addLike } from './involveLikes.js';
 
 const BaseUrl = 'https://api.tvmaze.com/shows';
 
@@ -30,6 +31,27 @@ const ShowDetails = async () => {
     })
   }
   )
+
+  const likes = document.createElement('li');
+  likes.classList.add('LikeCounter');
+  likes.innerHTML= '0 likes';
+  containersShows.appendChild(likes);
+
+  const likesData = await getLikes();
+  const showLikes = (likesData, likes) => {
+    likesData.forEach((movie) => {
+      if ( movie, item_id === movie.id) {
+        likes.innerHTML = `${movie.likes} likes `;
+      }
+    });
+  };
+  showLikes(likesData, likes);
+
+  fa-thumbs-up.addEventListener('click', async() => {
+    await addLike(movie.id);
+    const update = await getLikes();
+    showLikes(update, likes);
+  });
 };
 
 export default ShowDetails;
