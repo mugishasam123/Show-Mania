@@ -13,15 +13,15 @@ test('should have 9 items', () => {
     item_id: '65494',
   }, {
     item_id: '46881',
-  },{
+  }, {
     item_id: '1',
-  },{
+  }, {
     item_id: '12',
-  },{
+  }, {
     item_id: '32',
-  },{
+  }, {
     item_id: '67',
-  },{
+  }, {
     item_id: '24734',
   },
   ];

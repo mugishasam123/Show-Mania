@@ -1,10 +1,10 @@
 export default class Popup {
   constructor() {
-    this.popSection = document.querySelector(".popup-section");
+    this.popSection = document.querySelector('.popup-section');
   }
 
   popupDetails = async (id) => {
-    this.popSection.style.display = "flex";
+    this.popSection.style.display = 'grid';
     const showUrl = `https://api.tvmaze.com/shows/${id}`;
     const request = await fetch(showUrl);
     const data = await request.json();
@@ -12,25 +12,23 @@ export default class Popup {
     const commentRequest = await fetch(commentUrl);
 
     const comments = await commentRequest.json();
-   
-  const commentCounter = (comenta) => {
-     if(comenta.length>0){
-      var commentsCount = comenta.length;
-     }
-     else{
-      var commentsCount = 0;
-     }
-     return commentsCount;
-   }
+    let commentsCount = 0;
+    const commentCounter = (comenta) => {
+      if (comenta.length > 0) {
+        commentsCount = comenta.length;
+      } else {
+        commentsCount = 0;
+      }
+      return commentsCount;
+    };
 
-   const commentNumber = commentCounter(comments);
-   
-   
+    const commentNumber = commentCounter(comments);
+
     const popupData = `
       <div class="popup-window">
       <div class="title-close">
         <h2 class="show-title">${data.name}</h2>
-        <i class="closeBtn fa fa-close"></i>
+        <i class="closebtn fa fa-close"></i>
       </div>
    
       <img class="show-img" src="${data.image.original}" alt="" />
@@ -58,7 +56,7 @@ export default class Popup {
     </div>
     `;
     this.popSection.innerHTML = popupData;
-    const commentList = document.querySelector(".comments-list");
+    const commentList = document.querySelector('.comments-list');
 
     if (comments.length > 0) {
       comments.forEach((element) => {
@@ -66,72 +64,69 @@ export default class Popup {
         <p>${element.username} : ${element.comment}</p>
         `;
 
-        const listNode = document.createElement("li");
-        listNode.classList.add("comment-item");
+        const listNode = document.createElement('li');
+        listNode.classList.add('comment-item');
         listNode.innerHTML = commentData;
         commentList.appendChild(listNode);
       });
     } else {
-      commentList.innerHTML = "No comments Available";
+      commentList.innerHTML = 'No comments Available';
     }
 
-    const updateComments = async(id) => {
+    const updateComments = async (id) => {
       const newCommentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5Ap1XN8WUsuZk6doKhi8/comments?item_id=${id}`;
       const newCommentRequest = await fetch(newCommentUrl);
       const newComments = await newCommentRequest.json();
-     
-    const itemIndex = newComments.length-1;
-  
-    
-       const commentData = `<p>${newComments[itemIndex].creation_date}</p>
+
+      const itemIndex = newComments.length - 1;
+
+      const commentData = `<p>${newComments[itemIndex].creation_date}</p>
           <p>${newComments[itemIndex].username} : ${newComments[itemIndex].comment}</p>
           `;
-  
-          const listNode = document.createElement("li");
-          listNode.classList.add("comment-item");
-          listNode.innerHTML = commentData;
-          commentList.appendChild(listNode);
-          const newtot  = document.querySelector('.comments-counter');
-          const newNumber = commentCounter(newComments)
-          newtot.textContent = `Comments(${newNumber})`
-        
-    }
 
-    const postComment = async (formdata) => {
-      const postUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5Ap1XN8WUsuZk6doKhi8/comments`;
-      await fetch(postUrl, {
-        method: "POST",
-        body: JSON.stringify(formdata),
-        headers: {
-          "content-type": "application/json",
-        },
-      });
-       updateComments(id);
+      const listNode = document.createElement('li');
+      listNode.classList.add('comment-item');
+      listNode.innerHTML = commentData;
+      commentList.appendChild(listNode);
+      const newtot = document.querySelector('.comments-counter');
+      const newNumber = commentCounter(newComments);
+      newtot.textContent = `Comments(${newNumber})`;
     };
 
-    const SubmitButtons = document.querySelectorAll(".submit-comment");
-    const forma = document.querySelector('.myForm')
+    const postComment = async (formdata) => {
+      const postUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5Ap1XN8WUsuZk6doKhi8/comments';
+      await fetch(postUrl, {
+        method: 'POST',
+        body: JSON.stringify(formdata),
+        headers: {
+          'content-type': 'application/json',
+        },
+      });
+      updateComments(id);
+    };
+
+    const SubmitButtons = document.querySelectorAll('.submit-comment');
+    const forma = document.querySelector('.myForm');
     SubmitButtons.forEach((buttonComment) => {
-      buttonComment.addEventListener("click", (e) => {
+      buttonComment.addEventListener('click', (e) => {
         const user = document.querySelector('#name');
         const userComent = document.querySelector('#comment');
         e.preventDefault();
-      const formdata={
+        const formdata = {
           item_id: id,
           username: user.value,
           comment: userComent.value,
-      }
-      
+        };
+
         postComment(formdata);
-        
-       
+
         forma.reset();
       });
     });
 
-    const closeBt = document.querySelector(".closeBtn");
-    closeBt.addEventListener("click", () => {
-      this.popSection.style.display = "none";
+    const closeBt = document.querySelector('.closebtn');
+    closeBt.addEventListener('click', () => {
+      this.popSection.style.display = 'none';
     });
   };
 }
