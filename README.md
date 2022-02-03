@@ -19,10 +19,10 @@
     
 - WebPack
 
-# Live Demo 
-[Live Demo](https://mugishasam123.github.io/javascript-capstone/)
-# video presentation
-[Live Demo](https://drive.google.com/file/d/1_PRcgvVhlUYpx9J6ADwAYEubcMnnNoas/view?usp=sharing)
+
+[Live Demo ](https://mugishasam123.github.io/javascript-capstone/)
+
+[video link](https://drive.google.com/file/d/1_PRcgvVhlUYpx9J6ADwAYEubcMnnNoas/view?usp=sharing)
 
 
 # Run webpack server
