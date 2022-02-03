@@ -2,6 +2,7 @@
 >ShowMania is a website for shows where you can get in find your favourite show like it and leave a comment.
 >It is built with HTML, CSS and JavaScript with data from TvMaze API(tv show data) and the Involvement API(likes and comments)
 
+![screenshot](./Capture.PNG)
 # Built With
 
 . HTML
