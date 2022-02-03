@@ -191,3 +191,14 @@ form>input,textarea{
 form>input:focus,textarea:focus{
   border:3px solid #06C4C7 ;
 }
+
+.likeBtn:hover{
+  color:yellow;
+  cursor:pointer;
+}
+.likeBtn-number{
+  display:flex;
+  align-items:center;
+  gap:5px;
+
+}
