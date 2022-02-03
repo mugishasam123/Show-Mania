@@ -9,7 +9,11 @@ const ShowDetails = async () => {
   const shows = await fetch(BaseUrl);
   const result = await shows.json();
   const likesDta = await getLikes();
- 
+  let showsCounter = 0;
+ const allItemsCounter = () => {
+    ++showsCounter;
+    return showsCounter;
+ }
 
   for (let i = 0; i < 9 && i < result.length; i++) {
     const ShowList = `
@@ -27,7 +31,9 @@ const ShowDetails = async () => {
     card.classList.add("show-card");
     card.innerHTML = ShowList;
     containersShows.appendChild(card);
+    allItemsCounter();
   }
+  console.log(showsCounter);
   const pop = new Popup();
   const commentBtns = document.querySelectorAll(".commentBtn");
   commentBtns.forEach((buttonItem, index) => {
