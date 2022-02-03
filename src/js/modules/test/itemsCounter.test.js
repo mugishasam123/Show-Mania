@@ -3,9 +3,7 @@
  */
 import DisplayShows from '../api/showData.js';
 
-//const itemsCounter = new DisplayShows().allItemsCounter();
-
-
+// const itemsCounter = new DisplayShows().allItemsCounter();
 
 test('should have 9 items', () => {
   const itemsArr = [{
@@ -28,7 +26,7 @@ test('should have 9 items', () => {
     item_id: '24734',
   },
   ];
-  
+
   expect(DisplayShows.allItemsCounter(itemsArr)).toBe(9);
 });
 

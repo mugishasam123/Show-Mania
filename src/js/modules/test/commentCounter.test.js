@@ -3,7 +3,7 @@
 */
 import Popup from '../popup.js';
 
-//const commentCount = new Popup().commentCounter();
+// const commentCount = new Popup().commentCounter();
 
 test('should have 3 comments', () => {
   const comenta = [{

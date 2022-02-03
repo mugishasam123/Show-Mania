@@ -7,12 +7,12 @@ import postLikes from './postLikes.js';
 class DisplayShows {
 static allItemsCounter = (numberShows) => {
   let showsReturn = [];
-  
+
   if (numberShows.length > 0) {
-  /*  for (let i = 0; i < 9; i += 1) {*/
+  /*  for (let i = 0; i < 9; i += 1) { */
     numberShows.length = 9;
-      showsReturn = numberShows;
-   /* }*/
+    showsReturn = numberShows;
+    /* } */
   }
   return showsReturn.length;
 };
