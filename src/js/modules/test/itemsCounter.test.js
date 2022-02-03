@@ -26,11 +26,12 @@ test('should have 9 items', () => {
     item_id: '24734',
   },
   ];
-
-  expect(DisplayShows.allItemsCounter(itemsArr)).toBe(9);
+  const allCount = new DisplayShows().allItemsCounter(itemsArr);
+  expect(allCount).toBe(9);
 });
 
 test('should have 0 items', () => {
   const itemsArr = [];
-  expect(DisplayShows.allItemsCounter(itemsArr)).toBe(0);
+  const allCount = new DisplayShows().allItemsCounter(itemsArr);
+  expect(allCount).toBe(0);
 });

@@ -96,7 +96,6 @@ footer > h4 {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   padding: 80px;
-  margin-top: 40px;
 }
 
 .show-card {
@@ -206,4 +205,12 @@ textarea:focus {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.show-count {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 50px;
+  color: #0a2a87;
+  font-size: 35px;
 }

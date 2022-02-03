@@ -5,23 +5,26 @@ import getLikes from './getLikes.js';
 import postLikes from './postLikes.js';
 
 class DisplayShows {
-static allItemsCounter = (numberShows) => {
-  let showsReturn = [];
-
-  if (numberShows.length > 0) {
-  /*  for (let i = 0; i < 9; i += 1) { */
-    numberShows.length = 9;
-    showsReturn = numberShows;
-    /* } */
+  constructor() {
+    this.allItemsCounter = (numberShows) => {
+      let showsReturn = [];
+      if (numberShows.length > 0) {
+        numberShows.length = 9;
+        showsReturn = numberShows;
+      }
+      return showsReturn.length;
+    };
   }
-  return showsReturn.length;
-};
 
   ShowDetails = async () => {
+    const showsCount = document.querySelector('.show-count');
+
     const BaseUrl = 'https://api.tvmaze.com/shows';
     const containersShows = document.querySelector('.container-movies');
     const shows = await fetch(BaseUrl);
     const result = await shows.json();
+
+    showsCount.textContent = `Tv Shows(${this.allItemsCounter(result)})`;
     const likesDta = await getLikes();
     for (let i = 0; i < 9; i += 1) {
       const ShowList = `
