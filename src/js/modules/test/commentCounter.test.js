@@ -1,11 +1,12 @@
 /**
  * @jest-environment jsdom
 */
+import Popup from '../popup.js';
 
-import commentCounter from '../mock/commentCounter.js';
+//const commentCount = new Popup().commentCounter();
 
 test('should have 3 comments', () => {
-  const commentArr = [{
+  const comenta = [{
     item_id: '94595',
     username: 'samuel mugisha',
     comment: 'great show',
@@ -18,10 +19,13 @@ test('should have 3 comments', () => {
     username: 'divin',
     comment: 'i wish to act in it',
   }];
-  expect(commentCounter(commentArr)).toBe('Comments (3) by previous visitors');
+  const commentCount = new Popup().commentCounter(comenta);
+
+  expect(commentCount).toBe(3);
 });
 
 test('should have 0 comments', () => {
-  const commentArr = null;
-  expect(commentCounter(commentArr)).toBe('Comments (0) by previous visitors');
+  const comenta = [];
+  const commentCount = new Popup().commentCounter(comenta);
+  expect(commentCount).toBe(0);
 });

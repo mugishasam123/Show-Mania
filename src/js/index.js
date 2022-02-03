@@ -1,4 +1,4 @@
 import '../css/index.css';
-import ShowDetails from './modules/api/showData.js';
+import DisplayShows from './modules/api/showData.js';
 
-ShowDetails();
+new DisplayShows().ShowDetails();

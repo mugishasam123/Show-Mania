@@ -1,6 +1,15 @@
 export default class Popup {
   constructor() {
     this.popSection = document.querySelector('.popup-section');
+    this.commentsCount = 0;
+    this.commentCounter = (comenta) => {
+      if (comenta.length > 0) {
+        this.commentsCount = comenta.length;
+      } else {
+        this.commentsCount = 0;
+      }
+      return this.commentsCount;
+    };
   }
 
   popupDetails = async (id) => {
@@ -12,17 +21,8 @@ export default class Popup {
     const commentRequest = await fetch(commentUrl);
 
     const comments = await commentRequest.json();
-    let commentsCount = 0;
-    const commentCounter = (comenta) => {
-      if (comenta.length > 0) {
-        commentsCount = comenta.length;
-      } else {
-        commentsCount = 0;
-      }
-      return commentsCount;
-    };
 
-    const commentNumber = commentCounter(comments);
+    const commentNumber = this.commentCounter(comments);
 
     const popupData = `
       <div class="popup-window">
@@ -89,7 +89,7 @@ export default class Popup {
       listNode.innerHTML = commentData;
       commentList.appendChild(listNode);
       const newtot = document.querySelector('.comments-counter');
-      const newNumber = commentCounter(newComments);
+      const newNumber = this.commentCounter(newComments);
       newtot.textContent = `Comments(${newNumber})`;
     };
 

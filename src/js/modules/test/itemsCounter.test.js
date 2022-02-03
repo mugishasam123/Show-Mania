@@ -1,8 +1,11 @@
 /**
  * @jest-environment jsdom
  */
+import DisplayShows from '../api/showData.js';
 
-import allItemsCounter from '../mock/counterlike.js';
+//const itemsCounter = new DisplayShows().allItemsCounter();
+
+
 
 test('should have 9 items', () => {
   const itemsArr = [{
@@ -25,10 +28,11 @@ test('should have 9 items', () => {
     item_id: '24734',
   },
   ];
-  expect(allItemsCounter(itemsArr)).toBe(9);
+  
+  expect(DisplayShows.allItemsCounter(itemsArr)).toBe(9);
 });
 
 test('should have 0 items', () => {
-  const itemsArr = null;
-  expect(allItemsCounter(itemsArr)).toBe(0);
+  const itemsArr = [];
+  expect(DisplayShows.allItemsCounter(itemsArr)).toBe(0);
 });
