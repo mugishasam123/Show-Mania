@@ -66,12 +66,12 @@ $ npm start # this will open it in the browser and enable hot reloading
 
 ## Authors
 
-  ### Author 1 - Vana Seraydarian
+👤 **Author** - Vana Seraydarian
 - GitHub: [github](https://github.com/VSeray)
 - Twitter: [twitter](https://twitter.com/home)
 - LinkedIn: [Linkdin](https://www.linkedin.com/in/vana-seraydarian-936687191/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BNyso4dw6Tz6UBL%2Fqkjvtvw%3D%3D)
 
-### Author 2 - Mugisha Samuel
+👤 **Author** - Mugisha Samuel
 - GitHub: [@mugishasamuel](https://github.com/mugishasam123)
 - Twitter: [@mugishasamuel](https://twitter.com/mugishasamuel42/)
 - LinkedIn: [mugishasamuel](https://www.linkedin.com/in/mugisha-samuel-55a905208/)
