@@ -12,7 +12,7 @@
 
 # Live Demo
 
-[Live Demo ](https://spacehub42.netlify.app/)
+[Live Demo ](https://showmania42.netlify.app/)
 
 [video link](https://drive.google.com/file/d/1_PRcgvVhlUYpx9J6ADwAYEubcMnnNoas/view?usp=sharing)
 
