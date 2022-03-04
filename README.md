@@ -12,7 +12,7 @@
 
 # Live Demo
 
-[Live Demo ](https://mugishasam123.github.io/javascript-capstone/)
+[Live Demo ](https://spacehub42.netlify.app/)
 
 [video link](https://drive.google.com/file/d/1_PRcgvVhlUYpx9J6ADwAYEubcMnnNoas/view?usp=sharing)
 
